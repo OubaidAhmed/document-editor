@@ -6,7 +6,6 @@ import { MdOutlineWifiPassword } from "react-icons/md";
 import { Link, useNavigate } from 'react-router-dom';
 import rightIMG from "../images/loginRight.png"
 import { api_base_url } from '../Helper';
-import { useEffect } from 'react';
 
 
 const Login = () => {
