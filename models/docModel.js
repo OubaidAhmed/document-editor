@@ -1,9 +1,12 @@
-const mongoose = require('mongoose');
-import dotenv from "dotenv"
+var mongoose = require('mongoose');
+var dotenv = require('dotenv');
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('MongoDB connected successfully'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
 
 const docSchema = mongoose.Schema({
   title: String,
