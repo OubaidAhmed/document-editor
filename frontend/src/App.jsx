@@ -8,20 +8,20 @@ import Login from './pages/Login';
 import CreateDocs from './pages/createDocs';
 
 const App = () => {
-  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === "true"; // Check against string "true"
+
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-            <Route path='/' element={isLoggedIn ? <Home /> : <Navigate to="/login"/>} />
-            <Route path='/signUp' element={<SignUp />} />
-            <Route path='/login' element={<Login />} />
-            <Route path='/createDocs/:docsId' element={isLoggedIn ? <CreateDocs /> : <Navigate to="/login"/>} />
-            <Route path="*" element={isLoggedIn ? <NoPage /> : <Navigate to="/login"/>} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
+        <Route path='/signUp' element={<SignUp />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/createDocs/:docsId' element={isLoggedIn ? <CreateDocs /> : <Navigate to="/login" />} />
+        <Route path="*" element={isLoggedIn ? <NoPage /> : <Navigate to="/login" />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
 
 export default App

@@ -36,9 +36,9 @@ const Login = () => {
 
         if (data.success === true) {
           localStorage.setItem("token", data.token);
-          localStorage.setItem("isLoggedIn", true);
+          localStorage.setItem("isLoggedIn", "true"); // Store as a string
           localStorage.setItem("userId", data.userId);
-          navigate("/"); 
+          navigate("/"); // Navigate to home after successful login
         } else {
           setError(data.message);
           console.log(data.message);
@@ -48,7 +48,8 @@ const Login = () => {
         console.error("Error during login:", error);
         setError("Something went wrong. Please try again.");
       });
-  }
+  };
+
 
 
   return (
