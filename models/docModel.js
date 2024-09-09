@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
+import dotenv from "dotenv"
 
-mongoose.connect("mongodb+srv://editor:editor@cluster0.9q9dm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+dotenv.config();
+
+mongoose.connect(process.env.MONGODB_URI);
 
 const docSchema = mongoose.Schema({
   title: String,
