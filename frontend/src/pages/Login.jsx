@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import logo from "../images/logo.png"
 import { IoEye } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { MdOutlineWifiPassword } from "react-icons/md";
@@ -56,7 +55,7 @@ const Login = () => {
       <div className="flex overflow-hidden items-center w-screen justify-center flex-col h-screen bg-[#F0F0F0]">
         <div className="flex w-full items-center">
           <div className="left w-[30%] flex flex-col ml-[100px]">
-            <img className='w-[210px]' src={logo} alt="" />
+            <div className="text-xl font-bold">Document Editor</div>
             <form onSubmit={login} className='pl-3 mt-5' action="">
 
               <div className='inputCon'>
@@ -77,7 +76,7 @@ const Login = () => {
               </div>
 
               <p className='text-red-500 text-[14px] my-2'>{error}</p>
-              <p>Don't have an account <Link to="/signUp" className='text-blue-500'>Sing Up</Link></p>
+              <p>Don't have an account <Link to="/signUp" className='text-blue-500'>Sign Up</Link></p>
 
               <button className='p-[10px] bg-green-500 transition-all hover:bg-green-600 text-white rounded-lg w-full border-0 mt-3'>Login</button>
 
